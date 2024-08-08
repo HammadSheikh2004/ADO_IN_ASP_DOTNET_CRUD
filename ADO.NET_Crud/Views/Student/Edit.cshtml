@@ -1,0 +1,60 @@
+﻿@model ADO.NET_Crud.Models.Student_Info
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Student_Info</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            
+            <div class="form-group">
+                @Html.HiddenFor(id => id.Std_Id);
+                @Html.HiddenFor(img => img.Std_Image);
+                <label asp-for="Std_Name" class="control-label"></label>
+                <input asp-for="Std_Name" class="form-control" />
+                <span asp-validation-for="Std_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Std_Email" class="control-label"></label>
+                <input asp-for="Std_Email" class="form-control" />
+                <span asp-validation-for="Std_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Std_Phone" class="control-label"></label>
+                <input asp-for="Std_Phone" class="form-control" />
+                <span asp-validation-for="Std_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="age" class="control-label"></label>
+                <input asp-for="age" class="form-control" />
+                <span asp-validation-for="age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Std_Image" class="control-label"></label>
+                @if (Model != null && !string.IsNullOrEmpty(Model.Std_Image))
+                {
+                    <img src="~/StudentImages/@Model.Std_Image" width="50" height="50" />
+                }
+                <input asp-for="Std_Image" type="file" class="form-control" />
+                <span asp-validation-for="Std_Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

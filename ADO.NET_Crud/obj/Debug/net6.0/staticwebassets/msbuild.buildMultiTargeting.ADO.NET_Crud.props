@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\ADO.NET_Crud.props" />
+</Project>

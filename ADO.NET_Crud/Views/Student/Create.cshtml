@@ -1,0 +1,52 @@
+﻿@model ADO.NET_Crud.Models.Student_Info
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Student_Info</h4>
+<hr />
+<div class="row">
+    <div class="col-md-12">
+        <form asp-action="Create" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <h1>@ViewBag.Message</h1>
+            <div class="form-group">
+                <label asp-for="Std_Name" class="control-label"></label>
+                <input asp-for="Std_Name" class="form-control" />
+                <span asp-validation-for="Std_Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Std_Email" class="control-label"></label>
+                <input asp-for="Std_Email" class="form-control" />
+                <span asp-validation-for="Std_Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Std_Phone" class="control-label"></label>
+                <input asp-for="Std_Phone" class="form-control" />
+                <span asp-validation-for="Std_Phone" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="age" class="control-label"></label>
+                <input asp-for="age" class="form-control" />
+                <span asp-validation-for="age" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Student Image</label>
+                <input type="file" asp-for="Std_Image" class="form-control" />
+                <span asp-validation-for="Std_Image" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
